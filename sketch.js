@@ -26,28 +26,30 @@ function draw(){
   box2.y=World.mouseY;
   box2.x=World.mouseX;
 
-  touch(box3,box2);
-  touch(box4, box2);
+if(touch(box1,box2)){
 
+  box1.x=random(50,550);
+  box1.y=random(50,550);
+}
+
+if(touch(box3,box2)){
+
+  box3.shapeColor="white";
+  
+}
+else{
+  box3.shapeColor="green";
+}
+
+if(touch(box4,box2)){
+  background("pink");
+}
+
+else{
+  background(0);
+}
   drawSprites();
 }
 
-function touch(ob1 , ob2){
-  
-  if(ob1.x - ob2.x <= (ob1.width + ob2.width )/2 && 
-     ob2.x - ob1.x <= (ob1.width + ob2.width )/2 &&
-     ob1.y - ob2.y <= (ob1.height + ob2.height )/2 &&
-     ob2.y - ob1.y <= (ob1.height + ob2.height )/2){
 
-    ob1.shapeColor="yellow" ; 
-    ob2.shapeColor="yellow" ; 
-  }
-
-  else{
-
-    ob1.shapeColor="blue";
-    ob2.shapeColor="red";
-  }
-
-}
 
